@@ -1,0 +1,35 @@
+.userCard {
+}
+
+.userWrapper {
+  height: 350px;
+  width: 280px;
+  border: 2px solid grey;
+  margin: 100px;
+  background-color: rgb(247, 243, 239);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px auto;
+  gap: 20px;
+}
+
+.userPhoto {
+  margin: 20px 0 0;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: solid 2px grey;
+}
+
+.userName {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.btnDld {
+  margin: 25px;
+  background-color: cornflowerblue;
+  color: white;
+  border: 1px solid blue;
+}
