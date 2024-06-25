@@ -10,13 +10,11 @@
 
 const IMG_URL = "https://dog.ceo/api/breeds/image/random";
 
-fetch(IMG_URL)
-  .then((response) => response.json())
-  .then((data) => updateImg(data))
-  .catch((error) => console.log("error :>> ", error));
+getImgData();
+
+const image = document.querySelector(".imgDog");
 
 function updateImg(imgData) {
-  const image = document.querySelector(".imgDog");
   image.src = imgData.message;
 }
 
