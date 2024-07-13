@@ -53,6 +53,28 @@ const news = [
   },
 ];
 const containerNewsEl = document.querySelector(".containerNews");
+
+function createNewEl(type, content, className) {
+  const newEl = document.createElement(type);
+  newEl.textContent = content;
+  newEl.classList.add(className);
+  return newEl;
+}
+
+function createNewImg(src, className) {
+  const newImg = document.createElement("img");
+  newImg.src = src;
+  newImg.classList.add(className);
+  return newImg;
+}
+
+function createNewBtn(innerHTML, className) {
+  const newBtn = document.createElement("button");
+  newBtn.innerHTML = innerHTML;
+  newBtn.classList.add(className);
+  return newBtn;
+}
+
 news.forEach((element) => {
   const containerLiEl = document.createElement("li");
   const titleEl = createNewEl("div", "", "title");
@@ -74,33 +96,13 @@ news.forEach((element) => {
   containerLiEl.append(categoryEl, bodyEl, containerDateEl);
   containerDateEl.append(dateEl, trashIconEl);
 
-  function createNewEl(type, content, className) {
-    const newEl = document.createElement(type);
-    newEl.textContent = content;
-    newEl.classList.add(className);
-    return newEl;
-  }
-
-  function createNewImg(src, className) {
-    const newImg = document.createElement("img");
-    newImg.src = src;
-    newImg.classList.add(className);
-    return newImg;
-  }
-
-  function createNewBtn(innerHTML, className) {
-    const newBtn = document.createElement("button");
-    newBtn.innerHTML = innerHTML;
-    newBtn.classList.add(className);
-    return newBtn;
-  }
-
   trashIconEl.onclick = function () {
     containerLiEl.remove();
   };
 
-  btnLike.onclick = function () {
+  btnLike.onclick = function (e) {
     this.setAttribute("style", "color:red");
+    e.stopPropagation();
   };
 
   containerLiEl.onclick = function () {
